@@ -35,3 +35,14 @@ async def get_model(model_name: ModelName):
         return {"model_name": model_name, "message": "The GOAT of cricket"}
     if model_name is ModelName.jordan:
         return {"model_name": model_name, "message": "The GOAT of basketball"}
+
+
+# Endpoint for path parameter as well as query parameters
+@app.get("/items/{item_id}")
+async def read_item(item_id: str, color: str | None = None, instock: bool = False):
+    item = {"item_id": item_id}
+    if color:
+        item.update({"colort": color})
+    if instock:
+        item.update({"description": "Item is available"})
+    return item
