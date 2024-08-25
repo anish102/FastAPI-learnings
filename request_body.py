@@ -11,7 +11,6 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-
 @app.post("/items/")
 async def create_item(item: Item):
     item_dict = item.model_dump()
