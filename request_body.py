@@ -1,5 +1,6 @@
-from fastapi import FastAPI
 from pydantic import BaseModel
+
+from fastapi import FastAPI
 
 
 class Item(BaseModel):
@@ -10,6 +11,7 @@ class Item(BaseModel):
 
 
 app = FastAPI()
+
 
 @app.post("/items/")
 async def create_item(item: Item):
