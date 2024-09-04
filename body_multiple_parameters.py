@@ -14,7 +14,7 @@ class Item(BaseModel):
 
 
 class User(BaseModel):
-    username: str
+    user_name: str
     full_name: str | None = None
 
 
